@@ -26,7 +26,7 @@ class Team extends Model
      */
     public function golden()
     {
-        return $this->hasMany('App\Models\Game');
+        return $this->hasMany('App\Models\Game', 'golden_id');
     }
 
     /**
@@ -36,7 +36,7 @@ class Team extends Model
      */
     public function silver()
     {
-        return $this->hasMany('App\Models\Game');
+        return $this->hasMany('App\Models\Game', 'silver_id');
     }
 
     /**
@@ -46,7 +46,7 @@ class Team extends Model
      */
     public function bronze()
     {
-        return $this->hasMany('App\Models\Game');
+        return $this->hasMany('App\Models\Game', 'bronze_id');
     }
 
     /**
@@ -56,7 +56,7 @@ class Team extends Model
      */
     public function golden_s()
     {
-        return $this->hasMany('App\Models\Game');
+        return $this->hasMany('App\Models\Game', 'golden_s_id');
     }
 
     /**
@@ -66,7 +66,7 @@ class Team extends Model
      */
     public function silver_s()
     {
-        return $this->hasMany('App\Models\Game');
+        return $this->hasMany('App\Models\Game', 'silver_s_id');
     }
 
     /**
@@ -76,6 +76,6 @@ class Team extends Model
      */
     public function bronze_s()
     {
-        return $this->hasMany('App\Models\Game');
+        return $this->hasMany('App\Models\Game', 'bronze_s_id');
     }
 }

@@ -44,7 +44,7 @@ class Game extends Model
      */
     public function golden()
     {
-        return $this->belongsTo('App\Models\Team');
+        return $this->belongsTo('App\Models\Team', 'golden_id');
     }
 
     /**
@@ -54,7 +54,7 @@ class Game extends Model
      */
     public function silver()
     {
-        return $this->belongsTo('App\Models\Team');
+        return $this->belongsTo('App\Models\Team', 'silver_id');
     }
 
     /**
@@ -64,7 +64,7 @@ class Game extends Model
      */
     public function bronze()
     {
-        return $this->belongsTo('App\Models\Team');
+        return $this->belongsTo('App\Models\Team', 'bronze_id');
     }
 
     /**
@@ -74,7 +74,7 @@ class Game extends Model
      */
     public function golden_s()
     {
-        return $this->belongsTo('App\Models\Team');
+        return $this->belongsTo('App\Models\Team', 'golden_s_id');
     }
 
     /**
@@ -84,7 +84,7 @@ class Game extends Model
      */
     public function silver_s()
     {
-        return $this->belongsTo('App\Models\Team');
+        return $this->belongsTo('App\Models\Team', 'silver_s_id');
     }
 
     /**
@@ -94,6 +94,6 @@ class Game extends Model
      */
     public function bronze_s()
     {
-        return $this->belongsTo('App\Models\Team');
+        return $this->belongsTo('App\Models\Team', 'bronze_s_id');
     }
 }
