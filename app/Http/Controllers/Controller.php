@@ -24,7 +24,7 @@ class Controller extends BaseController
      *
      * @var string
      */
-    protected $title;
+    protected $title = '';
 
     /**
      * @param \App\ApiRender\Contracts\Render $render

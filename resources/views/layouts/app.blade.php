@@ -12,15 +12,11 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @include('layouts._header')
 </head>
 <body>
-    <div id="app" class="{{ route_class() }}-page">
-        @include('layouts._header')
-        <div class="container">
-            @yield('content')
-        </div>
-        @include('layouts._footer')
-    </div>
+    <div id="app" class="{{ route_class() }}-page"></div>
     <script src="{{ mix('js/app.js') }}"></script>
+    @include('layouts._footer')
 </body>
 </html>
