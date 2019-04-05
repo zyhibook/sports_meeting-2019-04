@@ -14,5 +14,5 @@
 Route::get('/', 'PagesController@root')->name('pages.root');
 
 Route::resource('news', 'NewsController');
-Route::resource('games', 'GamesController', ['except' => ['show']]);
+Route::resource('games', 'GamesController', ['except' => ['show', 'create', 'edit']]);
 Route::resource('teams', 'TeamsController', ['except' => ['show']]);
