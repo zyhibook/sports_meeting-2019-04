@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 
 /**
@@ -38,3 +37,7 @@ window.axios = require('./axios').default;
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+
+window.Vue = require('vue');
+
+require('./muse')

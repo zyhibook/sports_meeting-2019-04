@@ -12,7 +12,7 @@ class Render implements RenderContract
      *
      * @var string
      */
-    protected $flashMessage = [];
+    protected $flashMessages = [];
 
     /**
      * 页面当前标题
@@ -37,15 +37,15 @@ class Render implements RenderContract
     /**
      * 设置此次响应后前端应该弹出什么消息（可多次调用，依次显示）
      *
-     * @param  string  $key
-     * @param  mixed   $value
+     * @param  string  $type
+     * @param  mixed   $message
      * @return \App\ApiRender\Contracts\Render
      */
-    public function flash(string $key, $value = true)
+    public function flash(string $type, $message = true)
     {
-        $this->flashMessage[] = [
-            'key' => $key,
-            'value' => $value
+        $this->flashMessages[] = [
+            'type' => $type,
+            'message' => $message
         ];
 
         return $this;
@@ -73,7 +73,7 @@ class Render implements RenderContract
         }
 
         if (!empty($this->title)) {
-            $content['flash_message'] = $this->flashMessage;
+            $content['flash_messages'] = $this->flashMessages;
         }
 
         return $factory->make($content, $status, $headers);
