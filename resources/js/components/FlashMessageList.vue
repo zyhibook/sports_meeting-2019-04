@@ -1,12 +1,12 @@
 <template>
   <ul class="flash-message-list">
     <flash-message
-      v-for="(item, i) in messages"
+      v-for="(item, i) in flashMessages"
       :key="i"
       :type="item.type"
       :message="item.message"
       :index="i"
-      @delete="$emit('delete', $event)"
+      @delete="handleRemoveFlashMessage"
     ></flash-message>
   </ul>
 </template>
@@ -19,10 +19,17 @@ export default {
   components: {
     FlashMessage
   },
-  props: {
-    messages: {
-      type: Array,
-      required: true
+  data () {
+    return {
+      flashMessages: []
+    }
+  },
+  methods: {
+    handleReceiveFlashMessage (item) {
+      this.flashMessages.push(item)
+    },
+    handleRemoveFlashMessage (index) {
+      this.flashMessages.splice(index, 0)
     }
   }
 }

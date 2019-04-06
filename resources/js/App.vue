@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <flash-message-list :messages="flashMessages" @delete="handleRemoveFlashMessage"/>
+    <mu-container>
+      <flash-message-list ref="flashMessageList"/>
+    </mu-container>
   </div>
 </template>
 
@@ -12,23 +14,8 @@ export default {
   components: {
     FlashMessageList
   },
-  data () {
-    return {
-      flashMessages: []
-    }
-  },
-  created () {
-    setFlashMessageDisplayer(this.handleReceiveFlashMessage)
-  },
-  methods: {
-    handleReceiveFlashMessage (item) {
-      this.flashMessages.push(item)
-    },
-    handleRemoveFlashMessage (index) {
-      this.flashMessages.splice(index, 1)
-    }
-  },
   mounted () {
+    setFlashMessageDisplayer(this.$refs.flashMessageList.handleReceiveFlashMessage)
     axios('/games')
   }
 }

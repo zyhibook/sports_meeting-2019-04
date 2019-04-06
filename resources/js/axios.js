@@ -12,7 +12,7 @@ const config = {
 }
 
 const defaultFlashMessageDisplayer = function (message) {
-  alert(message.value)
+  alert(message.message)
 }
 
 const customConfig = {

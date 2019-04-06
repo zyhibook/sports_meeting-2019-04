@@ -1,7 +1,7 @@
 <template>
   <li class="flassh-message">
     <mu-alert
-      v-if="visible"
+      v-show="visible"
       :color="color"
       @delete="handleRemove"
       delete
@@ -32,8 +32,13 @@ export default {
   },
   data () {
     return {
-      visible: true
+      visible: false
     }
+  },
+  mounted () {
+    this.$nextTick(() => {
+      this.visible = true
+    })
   },
   computed: {
     color () {
@@ -59,8 +64,8 @@ export default {
     handleRemove () {
       this.visible = false
       setTimeout(() => {
-        this.$emit('delete', index)
-      }, 500)
+        this.$emit('delete', this.index)
+      }, 200)
     }
   }
 }
