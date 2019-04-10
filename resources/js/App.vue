@@ -1,6 +1,11 @@
 <template>
   <div id="app">
+    <Navigator @open="sideNavigator.open = !sideNavigator.open"/>
+    <Banner/>
+    <SideNavigator :open.sync="sideNavigator.open"/>
     <mu-container>
+      <GoldTops/>
+      <div class="home-page-space"></div>
       <flash-message-list ref="flashMessageList"/>
     </mu-container>
   </div>
@@ -8,11 +13,26 @@
 
 <script>
 import FlashMessageList from './components/FlashMessageList'
+import Navigator from './components/Navigator'
+import SideNavigator from './components/SideNavigator'
+import Banner from './components/Banner'
+import GoldTops from './components/GoldTops'
 import axios, { setFlashMessageDisplayer } from './axios'
 
 export default {
   components: {
-    FlashMessageList
+    FlashMessageList,
+    Navigator,
+    SideNavigator,
+    Banner,
+    GoldTops
+  },
+  data () {
+    return {
+      sideNavigator: {
+        open: false
+      }
+    }
   },
   mounted () {
     setFlashMessageDisplayer(this.$refs.flashMessageList.handleReceiveFlashMessage)
@@ -29,5 +49,9 @@ export default {
 }
 body {
   background-color: #f2f2f2;
+}
+.home-page-space {
+  height: 300px;
+  width: 100%;
 }
 </style>

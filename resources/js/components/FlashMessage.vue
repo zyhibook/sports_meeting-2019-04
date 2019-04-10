@@ -38,6 +38,11 @@ export default {
   mounted () {
     this.$nextTick(() => {
       this.visible = true
+      if (this.canAutoRemove) {
+        setTimeout(() => {
+          this.handleRemove()
+        }, 5000)
+      }
     })
   },
   computed: {
@@ -58,6 +63,13 @@ export default {
         'info': 'info'
       }
       return iconMap[this.type] || this.type
+    },
+    canAutoRemove () {
+      const statusMap = {
+        'success': true,
+        'info': true
+      }
+      return statusMap[this.type] || false
     }
   },
   methods: {
@@ -70,6 +82,3 @@ export default {
   }
 }
 </script>
-
-<style>
-</style>
