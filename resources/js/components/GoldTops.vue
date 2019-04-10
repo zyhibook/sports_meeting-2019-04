@@ -36,7 +36,7 @@ export default {
 
 <style>
 .gold-tops {
-  margin: 20px auto 0;
+  margin: 0 auto;
   max-width: 240px;
   background-color: #fff;
   border-radius: 12px;
@@ -45,15 +45,15 @@ export default {
   font-family: "Microsoft Yahei";
 }
 .gold-tops-header {
-  padding: 6px 0;
+  padding: 8px 0;
   background-color: #3b55e6;
   color: #fff;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.4em;
   font-weight: bold;
 }
 .gold-tops-list {
-  padding: 20px 0;
+  padding: 8px 0;
   display: flex;
   flex-direction: column;
   align-items: center;

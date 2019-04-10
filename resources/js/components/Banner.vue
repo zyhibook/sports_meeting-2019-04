@@ -18,7 +18,7 @@ export default {
 .banner {
   height: 200px;
   padding-top: 20px;
-  background: url("../../imgs/banner.jpg");
+  background: url("../../img/banner.jpg");
   background-size: auto 200px;
   background-position: center center;
   color: white;

@@ -7,10 +7,10 @@
       </mu-button>
       <div class="navigator-logos">
         <div class="navigator-logo-container">
-          <img class="navigator-logo" src="../../imgs/logo_xjtu.png" alt="logo_xjtu">
+          <img class="navigator-logo" src="../../img/logo_xjtu.png" alt="logo_xjtu">
         </div>
         <div class="navigator-logo-container">
-          <img class="navigator-logo" src="../../imgs/logo_eeyes.png" alt="logo_eeyes">
+          <img class="navigator-logo" src="../../img/logo_eeyes.png" alt="logo_eeyes">
         </div>
       </div>
     </div>
