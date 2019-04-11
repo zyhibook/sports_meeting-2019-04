@@ -12,10 +12,10 @@
       <div class="navigator-flex-grow"></div>
       <ul class="navigator-actions">
         <li>
-          <a href>后台管理菜单</a>
+          <a href="">后台管理菜单</a>
         </li>
         <li>
-          <a href>/js/components/AdminNavigator.vue</a>
+          <a href="">/js/components/AdminNavigator.vue</a>
         </li>
       </ul>
     </div>
