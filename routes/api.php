@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('news', 'Api\DataController@news');
 Route::get('teams', 'Api\DataController@teams');
+Route::get('games', 'Api\DataController@games');
