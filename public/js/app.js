@@ -2304,7 +2304,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 
 
 // module
-exports.push([module.i, "\n* {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\nbody {\n  background-color: #f2f2f2;\n}\n.home-page-space {\n  height: 300px;\n  width: 100%;\n}\n.home-page-second {\n  background-color: #fff;\n  padding-top: 20px;\n}\n", ""]);
+exports.push([module.i, "\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  list-style: none;\n}\nbody {\r\n  background-color: #f2f2f2;\n}\n.home-page-space {\r\n  height: 300px;\r\n  width: 100%;\n}\n.home-page-second {\r\n  background-color: #fff;\r\n  padding-top: 20px;\n}\r\n", ""]);
 
 // exports
 
@@ -2324,7 +2324,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.banner {\n  height: 200px;\n  padding-top: 20px;\n  background: url(" + escape(__webpack_require__(/*! ../../img/banner.jpg */ "./resources/img/banner.jpg")) + ");\n  background-size: auto 200px;\n  background-position: center center;\n  color: white;\n}\n.banner h1,\n.banner p {\n  margin: 0 auto;\n  text-align: center;\n  font-family: \"Microsoft Yahei\";\n  font-weight: normal;\n}\n.banner-live-button {\n  margin: 20px auto;\n  border-radius: 18px;\n}\n", ""]);
+exports.push([module.i, "\n.banner {\r\n  height: 200px;\r\n  padding-top: 20px;\r\n  background: url(" + escape(__webpack_require__(/*! ../../img/banner.jpg */ "./resources/img/banner.jpg")) + ");\r\n  background-size: auto 200px;\r\n  background-position: center center;\r\n  color: white;\n}\n.banner h1,\r\n.banner p {\r\n  margin: 0 auto;\r\n  text-align: center;\r\n  font-family: \"Microsoft Yahei\";\r\n  font-weight: normal;\n}\n.banner-live-button {\r\n  margin: 20px auto;\r\n  border-radius: 18px;\n}\r\n", ""]);
 
 // exports
 
@@ -2343,7 +2343,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.game-arrangement {\n  text-align: center;\n}\n.game-arrangement-title-group {\n  margin: 12px 0;\n}\n.game-arrangement-title-tips {\n  font-size: 0.8em;\n  color: #aaa;\n}\n.game-arrangement-hr {\n  margin: 0 60px;\n  border: none;\n  border-bottom: 2px solid #000;\n}\n.game-arrangement-list li {\n  margin: 4px auto;\n  max-width: 200px;\n  font-size: 1.3em;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n.game-arrangement-list li a {\n  color: #000;\n}\n.game-arrangement-list-icon {\n  position: relative;\n  top: 2px;\n}\n.game-arrangement-list li:hover {\n  background-color: #0001;\n}\n.game-arrangement-list li:hover .game-arrangement-list-icon {\n  -webkit-animation: rotate 1s infinite linear;\n          animation: rotate 1s infinite linear;\n}\n@-webkit-keyframes rotate {\nfrom {\n    -webkit-transform: rotateX(0deg);\n            transform: rotateX(0deg);\n}\nto {\n    -webkit-transform: rotateX(180deg);\n            transform: rotateX(180deg);\n}\n}\n@keyframes rotate {\nfrom {\n    -webkit-transform: rotateX(0deg);\n            transform: rotateX(0deg);\n}\nto {\n    -webkit-transform: rotateX(180deg);\n            transform: rotateX(180deg);\n}\n}\n", ""]);
+exports.push([module.i, "\n.game-arrangement {\r\n  text-align: center;\n}\n.game-arrangement-title-group {\r\n  margin: 12px 0;\n}\n.game-arrangement-title-tips {\r\n  font-size: 0.8em;\r\n  color: #aaa;\n}\n.game-arrangement-hr {\r\n  margin: 0 60px;\r\n  border: none;\r\n  border-bottom: 2px solid #000;\n}\n.game-arrangement-list li {\r\n  margin: 4px auto;\r\n  max-width: 200px;\r\n  font-size: 1.3em;\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\n}\n.game-arrangement-list li a {\r\n  color: #000;\n}\n.game-arrangement-list-icon {\r\n  position: relative;\r\n  top: 2px;\n}\n.game-arrangement-list li:hover {\r\n  background-color: #0001;\n}\n.game-arrangement-list li:hover .game-arrangement-list-icon {\r\n  -webkit-animation: rotate 1s infinite linear;\r\n          animation: rotate 1s infinite linear;\n}\n@-webkit-keyframes rotate {\nfrom {\r\n    -webkit-transform: rotateX(0deg);\r\n            transform: rotateX(0deg);\n}\nto {\r\n    -webkit-transform: rotateX(180deg);\r\n            transform: rotateX(180deg);\n}\n}\n@keyframes rotate {\nfrom {\r\n    -webkit-transform: rotateX(0deg);\r\n            transform: rotateX(0deg);\n}\nto {\r\n    -webkit-transform: rotateX(180deg);\r\n            transform: rotateX(180deg);\n}\n}\r\n", ""]);
 
 // exports
 
@@ -2362,7 +2362,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.game-news {\n  background-color: #535353;\n  padding: 60px 0;\n  text-align: center;\n}\n.game-news-title {\n  margin: 6px 0;\n  color: white;\n}\n.game-news-hr {\n  margin: 0 60px;\n  border: none;\n  border-bottom: 2px solid #fff;\n}\n.game-news-table {\n  padding: 10px 60px;\n  color: white;\n  text-align: left;\n}\n.game-news-number {\n  width: 60px;\n  vertical-align: top;\n}\n", ""]);
+exports.push([module.i, "\n.game-news {\r\n  background-color: #535353;\r\n  padding: 60px 0;\r\n  text-align: center;\n}\n.game-news-title {\r\n  margin: 6px 0;\r\n  color: white;\n}\n.game-news-hr {\r\n  margin: 0 60px;\r\n  border: none;\r\n  border-bottom: 2px solid #fff;\n}\n.game-news-table {\r\n  padding: 10px 60px;\r\n  color: white;\r\n  text-align: left;\n}\n.game-news-number {\r\n  width: 60px;\r\n  vertical-align: top;\n}\r\n", ""]);
 
 // exports
 
@@ -2381,7 +2381,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.game-ranking {\n  padding: 60px 0;\n  text-align: center;\n}\n.game-ranking-title {\n  margin: 12px 0;\n}\n.game-ranking-hr {\n  margin: 0 60px;\n  border: none;\n  border-bottom: 2px solid #000;\n}\n.game-ranking-table-container {\n  margin: 0 60px;\n  display: flex;\n}\n.game-ranking-table {\n  width: 100%;\n}\n.game-ranking-first-line th {\n  padding-top: 12px;\n}\n", ""]);
+exports.push([module.i, "\n.game-ranking {\r\n  padding: 60px 0;\r\n  text-align: center;\n}\n.game-ranking-title {\r\n  margin: 12px 0;\n}\n.game-ranking-hr {\r\n  margin: 0 60px;\r\n  border: none;\r\n  border-bottom: 2px solid #000;\n}\n.game-ranking-table-container {\r\n  margin: 0 60px;\r\n  display: flex;\n}\n.game-ranking-table {\r\n  width: 100%;\n}\n.game-ranking-first-line th {\r\n  padding-top: 12px;\n}\r\n", ""]);
 
 // exports
 
@@ -2400,7 +2400,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.gold-tops {\n  margin: 0 auto;\n  max-width: 240px;\n  background-color: #fff;\n  border-radius: 12px;\n  box-shadow: 2px 2px 12px #999;\n  overflow: hidden;\n  font-family: \"Microsoft Yahei\";\n}\n.gold-tops-header {\n  padding: 8px 0;\n  background-color: #3b55e6;\n  color: #fff;\n  text-align: center;\n  font-size: 1.4em;\n  font-weight: bold;\n}\n.gold-tops-list {\n  padding: 8px 0;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n.gold-tops-item {\n  text-align: center;\n  font-size: 1.2em;\n}\n.gold-tops-item-line1 {\n  border-bottom: 1px solid #000;\n}\n.gold-tops-item-line1,\n.gold-tops-item-line2 {\n  padding: 6px;\n}\n", ""]);
+exports.push([module.i, "\n.gold-tops {\r\n  margin: 0 auto;\r\n  max-width: 240px;\r\n  background-color: #fff;\r\n  border-radius: 12px;\r\n  box-shadow: 2px 2px 12px #999;\r\n  overflow: hidden;\r\n  font-family: \"Microsoft Yahei\";\n}\n.gold-tops-header {\r\n  padding: 8px 0;\r\n  background-color: #3b55e6;\r\n  color: #fff;\r\n  text-align: center;\r\n  font-size: 1.4em;\r\n  font-weight: bold;\n}\n.gold-tops-list {\r\n  padding: 8px 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\n}\n.gold-tops-item {\r\n  text-align: center;\r\n  font-size: 1.2em;\n}\n.gold-tops-item-line1 {\r\n  border-bottom: 1px solid #000;\n}\n.gold-tops-item-line1,\r\n.gold-tops-item-line2 {\r\n  padding: 6px;\n}\r\n", ""]);
 
 // exports
 
@@ -2419,7 +2419,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.navigator {\n  position: relative;\n  z-index: 100;\n  display: flex;\n  justify-content: center;\n  background: #fff;\n  padding: 20px 10px;\n  box-shadow: 0 2px 6px #aaa;\n}\n.navigator-inner {\n  width: 100%;\n  display: flex;\n}\n.navigator-logos {\n  flex: 1 1 auto;\n  display: flex;\n  align-items: center;\n}\n.navigator-logo-container {\n  padding: 0 5px;\n  width: 50%;\n}\n.navigator-logo {\n  margin: 0 auto;\n  display: block;\n  max-width: 100%;\n  height: auto;\n}\n.navigator-action {\n  color: #000;\n  font-weight: bold;\n}\n", ""]);
+exports.push([module.i, "\n.navigator {\r\n  position: relative;\r\n  z-index: 100;\r\n  display: flex;\r\n  justify-content: center;\r\n  background: #fff;\r\n  padding: 20px 10px;\r\n  box-shadow: 0 2px 6px #aaa;\n}\n.navigator-inner {\r\n  width: 100%;\r\n  display: flex;\n}\n.navigator-logos {\r\n  flex: 1 1 auto;\r\n  display: flex;\r\n  align-items: center;\n}\n.navigator-logo-container {\r\n  padding: 0 5px;\r\n  width: 50%;\n}\n.navigator-logo {\r\n  margin: 0 auto;\r\n  display: block;\r\n  max-width: 100%;\r\n  height: auto;\n}\n.navigator-action {\r\n  color: #000;\r\n  font-weight: bold;\n}\r\n", ""]);
 
 // exports
 
@@ -48754,8 +48754,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(muse_ui__WEBPACK_IMPORTED_MODULE_
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! E:\Eeyes\sports_meeting-2019-04\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! E:\Eeyes\sports_meeting-2019-04\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! F:\Workspace\Project-files\sport_meeting-2019-04\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! F:\Workspace\Project-files\sport_meeting-2019-04\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
