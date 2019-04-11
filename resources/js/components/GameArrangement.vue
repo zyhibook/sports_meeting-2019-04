@@ -102,4 +102,19 @@ export default {
   border: none;
   border-bottom: 2px solid #000;
 }
+@media screen and (min-width: 480px) {
+  .game-arrangement-hr {
+    max-width: 400px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .game-arrangement-hr {
+    max-width: 580px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .game-arrangement-hr {
+    max-width: 850px;
+  }
+}
 </style>

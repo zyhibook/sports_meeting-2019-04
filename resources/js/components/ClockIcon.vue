@@ -1,8 +1,5 @@
 <template>
-  <div class="clock-icon" :style="{
-    'width': `${size}px`,
-    'height': `${size}px`
-  }">
+  <div class="clock-icon">
     <div class="clock-icon-hour-line" :style="{
       'transform': `rotate(${hourAngle}deg)`
     }"></div>
@@ -16,10 +13,6 @@
 export default {
   name: 'ClockIcon',
   props: {
-    size: {
-      type: Number,
-      default: 16
-    },
     hour: {
       type: Number,
       default: 10
