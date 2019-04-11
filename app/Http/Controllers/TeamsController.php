@@ -12,7 +12,7 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        $teams = Team::pagiante(20);
+        $teams = Team::paginate(20);
 
         return view('teams.index', compact('teams'));
     }

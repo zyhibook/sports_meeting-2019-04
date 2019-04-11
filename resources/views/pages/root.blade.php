@@ -3,5 +3,5 @@
 @section('title', '首页')
 
 @section('content')
-<home-page />
+<home-page/>
 @endsection
