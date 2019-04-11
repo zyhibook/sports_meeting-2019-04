@@ -40,4 +40,5 @@ window.axios = require('./axios').default;
 
 window.Vue = require('vue');
 
+// require('./store')
 require('./muse')

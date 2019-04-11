@@ -20,42 +20,29 @@
 </template>
 
 <script>
+import axios from '../axios'
+
 export default {
   name: 'GameRanking',
   data() {
     return {
-      list: [
-        {
-          rank: 1,
-          name: '某某书院',
-          count: 30
-        },
-        {
-          rank: 1,
-          name: '某某书院',
-          count: 30
-        },
-        {
-          rank: 2,
-          name: '某某书院',
-          count: 20
-        },
-        {
-          rank: 2,
-          name: '某某书院',
-          count: 20
-        },
-        {
-          rank: 2,
-          name: '某某书院',
-          count: 20
-        },
-        {
-          rank: 2,
-          name: '某某书院',
-          count: 20
-        },
-      ]
+      list: []
+    }
+  },
+  mounted() {
+    this.fetchGamesIndex()
+  },
+  methods: {
+    async fetchGamesIndex() {
+      try {
+        const data = await axios({
+          url: '/games',
+          method: 'get'
+        })
+        this.list = data.games.data
+      } catch (error) {
+        this.$toast.error(error.message)
+      }
     }
   }
 }

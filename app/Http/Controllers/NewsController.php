@@ -7,16 +7,23 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
+    /**
+     * 当前页面的标题
+     *
+     * @var string
+     */
+    protected $title = '新闻';
+
     public function index()
     {
         $news = News::select('id', 'title')->paginate(20);
 
-        return view('news.index', compact('news'));
+        return $this->render->make(compact('news'));
     }
 
     public function show(News $news)
     {
-        return view('news.show', compact('news'));
+        return $this->render->make(compact('news'));
     }
 
     public function create()

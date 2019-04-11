@@ -16,36 +16,29 @@
 </template>
 
 <script>
+import axios from '../axios'
+
 export default {
   name: 'GameArrangement',
   data() {
     return {
-      list: [
-        {
-          name: '12日上午径赛'
-        },
-        {
-          name: '12日上午田赛'
-        },
-        {
-          name: '12日下午径赛'
-        },
-        {
-          name: '12日下午田赛'
-        },
-        {
-          name: '13日上午径赛'
-        },
-        {
-          name: '13日上午田赛'
-        },
-        {
-          name: '13日下午径赛'
-        },
-        {
-          name: '13日下午田赛'
-        },
-      ]
+      list: []
+    }
+  },
+  mounted() {
+    this.fetchGamesIndex()
+  },
+  methods: {
+    async fetchGamesIndex() {
+      try {
+        const data = await axios({
+          url: '/games',
+          method: 'get'
+        })
+        this.list = data.games.data
+      } catch (error) {
+        this.$toast.error(error.message)
+      }
     }
   }
 }
@@ -53,6 +46,7 @@ export default {
 
 <style>
 .game-arrangement {
+  padding: 10px 0 60px;
   text-align: center;
 }
 .game-arrangement-title-group {

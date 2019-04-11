@@ -36,4 +36,10 @@ export default {
 </script>
 
 <style>
+.flash-message-list {
+  padding: 8px 16px;
+}
+.flash-message-list li {
+  margin: 8px 0;
+}
 </style>

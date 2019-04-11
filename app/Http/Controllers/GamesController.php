@@ -20,11 +20,11 @@ class GamesController extends Controller
     public function index()
     {
         $games = Game::paginate(20);
-        $this->render
-            ->flash('danger', '测试')
-            ->flash('warning', '测试')
-            ->flash('success', '测试')
-            ->flash('info', '测试');
+        // $this->render
+        //     ->flash('danger', '测试')
+        //     ->flash('warning', '测试')
+        //     ->flash('success', '测试')
+        //     ->flash('info', '测试');
 
         return $this->render->make(compact('games'));
     }

@@ -3,34 +3,38 @@
     <h2 class="game-news-title">运动会新闻</h2>
     <hr class="game-news-hr">
     <table class="game-news-table">
-      <tr v-for="(line, i) in news" :key="i">
-        <td class="game-news-number">News.{{ i }}</td>
-        <td>{{ line }}</td>
+      <tr v-for="(item, i) in news" :key="i">
+        <td class="game-news-number">News.{{ i + 1 }}</td>
+        <td>{{ item.title }}</td>
       </tr>
     </table>
   </div>
 </template>
 
 <script>
+import axios from '../axios'
+
 export default {
   name: 'GameNews',
   data() {
     return {
-      news: [
-        '校领导抱篮球跑接力赛顺利结束',
-        '精彩聚焦研究生男子组100米短跑预赛',
-        '研究生女子400米决赛',
-        '男子教工趣味篮球赛--看老师们身手矫捷拍篮球拍篮球拍篮球拍篮球拍篮球拍篮球拍篮球拍篮球拍篮球拍篮球',
-        '校领导抱篮球跑接力赛顺利结束',
-        '精彩聚焦研究生男子组100米短跑预赛',
-        '研究生女子400米决赛',
-        '校领导抱篮球跑接力赛顺利结束',
-        '精彩聚焦研究生男子组100米短跑预赛',
-        '研究生女子400米决赛',
-        '校领导抱篮球跑接力赛顺利结束',
-        '精彩聚焦研究生男子组100米短跑预赛',
-        '研究生女子400米决赛',
-      ]
+      news: []
+    }
+  },
+  mounted() {
+    this.fetchNewsIndex()
+  },
+  methods: {
+    async fetchNewsIndex() {
+      try {
+        const data = await axios({
+          url: '/news',
+          method: 'get'
+        })
+        this.news = data.news.data
+      } catch (error) {
+        this.$toast.error(error.message)
+      }
     }
   }
 }

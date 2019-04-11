@@ -18,9 +18,11 @@ require('./bootstrap');
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
+Vue.component('home-page', require('./views/Home.vue').default);
 
-const App = require('./App.vue').default
+// const App = require('./App.vue').default
+// const store = require('./store').default
+// const router = require('./router').default
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,7 +31,10 @@ const App = require('./App.vue').default
  */
 
 new Vue({
-  // router,
-  // store,
-  render: h => h(App)
-}).$mount('#app')
+  el: '#app'
+})
+// new Vue({
+//   router,
+//   store,
+//   render: h => h(App)
+// }).$mount('#app')
