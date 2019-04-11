@@ -18,7 +18,7 @@
           />
         </ol>
         <div v-else>
-          <p>暂时还没有赛事安排信息哦</p>
+          <p style="text-align:center">暂时还没有赛事安排信息哦</p>
         </div>
       </div>
     </mu-expand-transition>

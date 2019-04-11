@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('pages.admin')
 
 @section('title', '新闻')
 
