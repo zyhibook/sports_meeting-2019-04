@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    /**
-     * 当前页面的标题
-     *
-     * @var string
-     */
-    protected $title = '新闻';
+    public function __construct()
+    {
+        $this->middleware('auth', [
+            'except' => ['show']
+        ]);
+    }
 
     public function index()
     {

@@ -6,6 +6,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="{{ route('pages.admin') }}">管理首页</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('news.index') }}">新闻管理</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('teams.index') }}">队伍管理</a></li>
                 <li class="nav-item"><a class="nav-link" href="{{ route('games.index') }}">赛事管理</a></li>

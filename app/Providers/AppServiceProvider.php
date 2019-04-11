@@ -27,5 +27,7 @@ class AppServiceProvider extends ServiceProvider
         if (env('APP_DEBUG', false)) {
             Schema::defaultStringLength(191);
         }
+
+        \Carbon\Carbon::setLocale('zh');
     }
 }

@@ -17,7 +17,7 @@ class CreateGamesTable extends Migration
             $table->increments('id');
             $table->string('name')->comment('赛事名称');
             $table->integer('class')->comment('赛事类型');
-            $table->timestamp('begins_at');
+            $table->timestamp('begins_at')->nullable();
             $table->integer('golden_id')->nullable()->comment('金牌队伍ID');
             $table->string('golden_name')->nullable()->comment('金牌获得者');
             $table->integer('silver_id')->nullable()->comment('银牌队伍ID');

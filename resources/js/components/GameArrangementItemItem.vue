@@ -104,6 +104,7 @@ export default {
   position: relative;
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 .game-arrangement-item-item-title {
   display: flex;

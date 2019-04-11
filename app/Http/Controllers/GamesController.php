@@ -3,30 +3,25 @@
 namespace App\Http\Controllers;
 
 use App\Models\Game;
+use App\Models\Team;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class GamesController extends Controller
 {
-    /**
-     * 当前页面的标题
-     *
-     * @var string
-     */
-    protected $title = '赛事';
-
     /**
      * @return \Illuminate\Http\JsonResponse
      */
     public function index()
     {
         $games = Game::paginate(20);
-        // $this->render
-        //     ->flash('danger', '测试')
-        //     ->flash('warning', '测试')
-        //     ->flash('success', '测试')
-        //     ->flash('info', '测试');
 
-        return $this->render->make(compact('games'));
+        return view('games.index', compact('games'));
+    }
+
+    public function create()
+    {
+        return view('games.create');
     }
 
     /**
@@ -35,10 +30,21 @@ class GamesController extends Controller
      */
     public function store(Request $request)
     {
-        Game::create($request->all());
-        $this->render->flash('success', '赛事创建成功');
+        Game::create([
+            'name' => $request->post('name'),
+            'class' => $request->post('class'),
+            'begins_at' => Carbon::parse($request->post('begins_at')),
+        ]);
+        session()->flash('success', '赛事创建成功');
 
-        return $this->render->make();
+        return redirect()->route('games.index');
+    }
+
+    public function edit(Game $game)
+    {
+        $teams = Team::all();
+
+        return view('games.edit', compact('game','teams'));
     }
 
     /**
@@ -48,10 +54,15 @@ class GamesController extends Controller
      */
     public function update(Game $game, Request $request)
     {
-        $game->update($request->all());
-        $this->render->flash('success', '赛事信息更新成功');
+        $data = $request->all();
+        $data['begins_at'] = Carbon::parse($request->begins_at)->toDateTimeString();
 
-        return $this->render->make();
+//        dd($data);
+
+        $game->update($data);
+        session()->flash('success', '赛事信息更新成功');
+
+        return redirect()->route('games.index');
     }
 
     /**
@@ -62,8 +73,8 @@ class GamesController extends Controller
     public function destroy(Game $game)
     {
         $game->delete();
-        $this->render->flash('danger', '赛事删除成功');
+        session()->flash('danger', '赛事删除成功');
 
-        return $this->render->make();
+        return redirect()->route('games.index');
     }
 }

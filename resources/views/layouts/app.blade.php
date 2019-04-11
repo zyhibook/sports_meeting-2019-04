@@ -14,16 +14,18 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
     <link rel="stylesheet" href="//img.eeyes.net/eeyes_common/css/eeyes_common.css">
+    @auth
+        <link rel="stylesheet" href="{{ mix('css/admin.css') }}">
+    @endauth
     @yield('styles')
 <body>
     <div id="app" class="{{ route_class() }}-page">
         @auth
             @include('layouts._header')
         @endauth
-        <div class="container">
-            @yield('content')
-        </div>
-            @include('layouts._footer')
+        @include('shared._messages')
+        @yield('content')
+        @include('layouts._footer')
     </div>
     <script src="{{ mix('js/app.js') }}"></script>
 </body>

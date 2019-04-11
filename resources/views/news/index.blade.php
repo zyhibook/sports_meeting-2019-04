@@ -7,29 +7,33 @@
 @stop
 
 @section('content')
-    <table class="table">
-        <thead>
+    <div class="container">
+        <a href="{{ route('news.create') }}" class="btn btn-info">创建新闻</a>
+        <table class="table">
+            <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">标题</th>
                 <th scope="col">操作</th>
             </tr>
-        </thead>
-        <tbody>
+            </thead>
+            <tbody>
             @foreach($news as $single_news)
                 <tr>
                     <th scope="row">{{ $single_news->id }}</th>
                     <td><a href="{{ route('news.show', [$single_news->id]) }}" class="card-link">{{ $single_news->title }}</a></td>
                     <td>
-                        <form action="{{ route('news.destroy', $single_news->id) }}">
+                        <form method="post" action="{{ route('news.destroy', $single_news->id) }}">
                             @csrf
+                            @method('delete')
                             <button type="submit" class="btn btn-danger btn-sm">删除</button>
                         </form>
                     </td>
                 </tr>
             @endforeach
-        </tbody>
-    </table>
+            </tbody>
+        </table>
 
-    {!! $news->render() !!}
+        {!! $news->render() !!}
+    </div>
 @endsection
