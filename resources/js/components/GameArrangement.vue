@@ -1,6 +1,7 @@
 <template>
   <div class="game-arrangement">
     <div class="game-arrangement-title-group">
+      <a id="arrangement" name="arrangement" rel="external nofollow">&nbsp;</a>
       <h2 class="game-arrangement-title">赛事安排</h2>
       <span class="game-arrangement-title-tips">（点击时间查看项目安排）</span>
     </div>
@@ -114,7 +115,7 @@ export default {
 }
 @media screen and (min-width: 960px) {
   .game-arrangement-hr {
-    max-width: 850px;
+    max-width: 800px;
   }
 }
 </style>

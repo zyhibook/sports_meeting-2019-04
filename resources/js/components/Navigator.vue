@@ -1,39 +1,71 @@
 <template>
-  <nav class="navigator">
-    <!-- 顶部导航栏：侧边弹出按钮、交大校徽、e瞳logo -->
-    <div class="navigator-inner">
-      <div class="navigator-trigger">
-        <mu-button icon slot="left" @click="$emit('open')">
-          <mu-icon value="menu"></mu-icon>
-        </mu-button>
-      </div>
-      <div class="navigator-logos">
-        <div class="navigator-logo-container">
-          <img class="navigator-logo" src="../../img/logo_xjtu.png" alt="logo_xjtu">
+  <div class="navigator-outter" :class="{ 'fixed': fixed }">
+    <nav class="navigator">
+      <!-- 顶部导航栏：侧边弹出按钮、交大校徽、e瞳logo -->
+      <div class="navigator-inner">
+        <div class="navigator-trigger">
+          <mu-button icon slot="left" @click="$emit('open')">
+            <mu-icon value="menu"></mu-icon>
+          </mu-button>
         </div>
-        <div class="navigator-logo-container">
-          <img class="navigator-logo" src="../../img/logo_eeyes.png" alt="logo_eeyes">
+        <div class="navigator-logos">
+          <div class="navigator-logo-container">
+            <img class="navigator-logo" src="../../img/logo_xjtu.png" alt="logo_xjtu">
+          </div>
+          <div class="navigator-logo-container">
+            <img class="navigator-logo" src="../../img/logo_eeyes.png" alt="logo_eeyes">
+          </div>
         </div>
+        <div class="navigator-flex-grow"></div>
+        <ul class="navigator-actions">
+          <li>
+            <a href="#arrangement">赛事安排</a>
+          </li>
+          <li>
+            <a href="#news">运动会新闻</a>
+          </li>
+          <li>
+            <a href="#ranking">金牌排名</a>
+          </li>
+        </ul>
       </div>
-      <div class="navigator-flex-grow"></div>
-      <ul class="navigator-actions">
-        <li>
-          <a href="">赛事安排</a>
-        </li>
-        <li>
-          <a href="">运动会新闻</a>
-        </li>
-        <li>
-          <a href="">金牌排名</a>
-        </li>
-      </ul>
-    </div>
-  </nav>
+    </nav>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Navigator'
+  name: 'Navigator',
+  data() {
+    return {
+      fixed: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.onScroll, { passive: true })
+  },
+  destroyed() {
+    window.removeEventListener('scroll', this.onScroll)
+  },
+  methods: {
+    getBoundaryOffset() {
+      if (window.document.body.clientWidth < 480) {
+        return 280
+      } else if (window.document.body.clientWidth < 640) {
+        return 320
+      } else {
+        return 440
+      }
+    },
+    onScroll() {
+      const offset = document.documentElement.scrollTop
+      if (offset > this.getBoundaryOffset()) {
+        this.fixed = true
+      } else {
+        this.fixed = false
+      }
+    }
+  }
 }
 </script>
 
@@ -97,12 +129,29 @@ export default {
   color: #000;
   font-size: 1.3em;
 }
+.navigator-outter {
+  height: 80px;
+}
+.navigator-outter.fixed .navigator {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  animation: slide-in 0.4s;
+}
 @media screen and (min-width: 640px) {
   .navigator-trigger {
     display: none;
   }
   .navigator-actions {
     display: flex;
+  }
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-80px);
+  }
+  to {
+    transform: none;
   }
 }
 </style>
