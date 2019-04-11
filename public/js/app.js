@@ -49259,11 +49259,7 @@ Vue.component('home-page', __webpack_require__(/*! ./views/Home.vue */ "./resour
 
 new Vue({
   el: '#app'
-}); // new Vue({
-//   router,
-//   store,
-//   render: h => h(App)
-// }).$mount('#app')
+});
 
 /***/ }),
 

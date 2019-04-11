@@ -33,8 +33,3 @@ Vue.component('home-page', require('./views/Home.vue').default);
 new Vue({
   el: '#app'
 })
-// new Vue({
-//   router,
-//   store,
-//   render: h => h(App)
-// }).$mount('#app')
