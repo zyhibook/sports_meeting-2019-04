@@ -18,12 +18,12 @@ class NewsController extends Controller
     {
         $news = News::select('id', 'title')->paginate(20);
 
-        return $this->render->make(compact('news'));
+        return view('news.index', compact('news'));
     }
 
     public function show(News $news)
     {
-        return $this->render->make(compact('news'));
+        return view('news.show', compact('news'));
     }
 
     public function create()

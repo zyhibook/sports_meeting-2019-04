@@ -1,13 +1,13 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('title', '新闻')
 
 @section('content')
-    <ul>
-        @foreach($news as $single_news)
-            <li><a href="{{ route('news.show', [$single_news->id]) }}">{{ $single_news->title }}</a></li>
-        @endforeach
-    </ul>
+<ul>
+    @foreach($news as $single_news)
+    <li><a href="{{ route('news.show', [$single_news->id]) }}">{{ $single_news->title }}</a></li>
+    @endforeach
+</ul>
 
-    {!! $news->render() !!}
+{!! $news->render() !!}
 @endsection
