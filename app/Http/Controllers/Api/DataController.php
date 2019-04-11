@@ -8,6 +8,7 @@ use App\Models\Team;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\TeamResource;
 use App\Http\Resources\NewsResource;
+use App\Http\Resources\GameResource;
 
 class DataController extends Controller
 {
