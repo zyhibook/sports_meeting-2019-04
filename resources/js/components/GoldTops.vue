@@ -2,40 +2,30 @@
   <div class="gold-tops">
     <div class="gold-tops-header">金牌排名</div>
     <ul class="gold-tops-list">
-      <li v-for="(item, i) in list" :key="i" class="gold-tops-item">
-        <p class="gold-tops-item-line1">No.{{ i + 1 }}：{{ item.count }}枚</p>
-        <p class="gold-tops-item-line2">{{ item.name }}书院</p>
+      <li v-for="(item, i) in teamsRankedGolden" :key="i" class="gold-tops-item">
+        <p class="gold-tops-item-line1">No.{{ i + 1 }}：{{ item.golden_count + item.golden_s_count }}枚</p>
+        <p class="gold-tops-item-line2">{{ item.name }}</p>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
+
 export default {
   name: 'GoldTops',
-  data () {
-    return {
-      list: [
-        {
-          count: 30,
-          name: '某某'
-        },
-        {
-          count: 30,
-          name: '某某'
-        },
-        {
-          count: 30,
-          name: '某某'
-        },
-      ]
-    }
+  computed: {
+    ...mapGetters({
+      teamsRankedGolden: 'teamsRankedGolden'
+    })
   }
 }
 </script>
 
 <style>
 .gold-tops {
+  box-sizing: border-box;
   margin: 0 auto;
   max-width: 240px;
   background-color: #fff;
@@ -68,5 +58,29 @@ export default {
 .gold-tops-item-line1,
 .gold-tops-item-line2 {
   padding: 6px;
+}
+@media screen and (min-width: 480px) {
+  .gold-tops {
+    display: flex;
+    flex-direction: row-reverse;
+    max-width: 400px;
+  }
+  .gold-tops-header {
+    padding: 16px 8px;
+    writing-mode: vertical-lr;
+  }
+  .gold-tops-list {
+    padding: 20px 0;
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+@media screen and (min-width: 640px) {
+  .gold-tops {
+    margin-top: -90px;
+    height: 140px;
+    max-width: 540px;
+  }
 }
 </style>

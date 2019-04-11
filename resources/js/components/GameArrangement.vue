@@ -6,9 +6,9 @@
     </div>
     <hr class="game-arrangement-hr">
     <ul class="game-arrangement-list">
-      <li v-for="(item, i) in list" :key="i">
+      <li v-for="k in collection" :key="k">
         <mu-icon class="game-arrangement-list-icon" size="24" value="keyboard_arrow_right"></mu-icon>
-        <a :href="item.url">{{ item.name }}</a>
+        <a>{{ readable_map[k] }}</a>
         <mu-icon class="game-arrangement-list-icon" size="24" value="keyboard_arrow_left"></mu-icon>
       </li>
     </ul>
@@ -16,29 +16,44 @@
 </template>
 
 <script>
-import axios from '../axios'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'GameArrangement',
-  data() {
-    return {
-      list: []
-    }
-  },
-  mounted() {
-    this.fetchGamesIndex()
-  },
-  methods: {
-    async fetchGamesIndex() {
-      try {
-        const data = await axios({
-          url: '/games',
-          method: 'get'
-        })
-        this.list = data.games.data
-      } catch (error) {
-        this.$toast.error(error.message)
+  computed: {
+    ...mapGetters({
+      games_12am_track: 'games_12am_track',
+      games_12am_field: 'games_12am_field',
+      games_12pm_track: 'games_12pm_track',
+      games_12pm_field: 'games_12pm_field',
+      games_13am_track: 'games_13am_track',
+      games_13am_field: 'games_13am_field',
+      games_13pm_track: 'games_13pm_track',
+      games_13pm_field: 'games_13pm_field'
+    }),
+    readable_map() {
+      return {
+        games_12am_track: '12日上午径赛',
+        games_12am_field: '12日上午田赛',
+        games_12pm_track: '12日下午径赛',
+        games_12pm_field: '12日下午田赛',
+        games_13am_track: '13日上午径赛',
+        games_13am_field: '13日上午田赛',
+        games_13pm_track: '13日下午径赛',
+        games_13pm_field: '13日下午田赛'
       }
+    },
+    collection() {
+      return [
+        'games_12am_track',
+        'games_12am_field',
+        'games_12pm_track',
+        'games_12pm_field',
+        'games_13am_track',
+        'games_13am_field',
+        'games_13pm_track',
+        'games_13pm_field',
+      ]
     }
   }
 }

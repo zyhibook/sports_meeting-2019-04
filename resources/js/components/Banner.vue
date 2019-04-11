@@ -17,7 +17,7 @@ export default {
 <style>
 .banner {
   height: 200px;
-  padding-top: 20px;
+  padding: 20px 10px 0;
   background: url("../../img/banner.jpg");
   background-size: auto 200px;
   background-position: center center;
@@ -33,5 +33,19 @@ export default {
 .banner-live-button {
   margin: 20px auto;
   border-radius: 18px;
+}
+@media screen and (min-width: 480px) {
+  .banner {
+    height: 240px;
+    background-size: auto 240px;
+    padding-top: 40px;
+  }
+}
+@media screen and (min-width: 640px) {
+  .banner {
+    height: 360px;
+    background-size: auto 360px;
+    padding-top: 60px;
+  }
 }
 </style>

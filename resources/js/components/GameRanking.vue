@@ -9,10 +9,10 @@
           <th>队伍名称</th>
           <th>奖牌数</th>
         </tr>
-        <tr v-for="(item, i) in list" :key="i">
+        <tr v-for="(item, i) in computedTeamsRankedMedal" :key="i">
           <td>{{ item.rank }}</td>
           <td>{{ item.name }}</td>
-          <td>{{ item.count }}</td>
+          <td>{{ item.total_count }}</td>
         </tr>
       </table>
     </div>
@@ -20,29 +20,19 @@
 </template>
 
 <script>
-import axios from '../axios'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'GameRanking',
-  data() {
-    return {
-      list: []
-    }
-  },
-  mounted() {
-    this.fetchGamesIndex()
-  },
-  methods: {
-    async fetchGamesIndex() {
-      try {
-        const data = await axios({
-          url: '/games',
-          method: 'get'
-        })
-        this.list = data.games.data
-      } catch (error) {
-        this.$toast.error(error.message)
-      }
+  computed: {
+    ...mapGetters({
+      teamsRankedMedal: 'teamsRankedMedal'
+    }),
+    computedTeamsRankedMedal() {
+      return this.teamsRankedMedal.map(item => ({
+        ...item,
+        total_count: item.golden_count + item.golden_s_count + item.silver_count + item.silver_s_count + item.bronze_count + item.bronze_s_count
+      }))
     }
   }
 }

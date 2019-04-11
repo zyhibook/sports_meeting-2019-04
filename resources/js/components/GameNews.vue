@@ -12,30 +12,14 @@
 </template>
 
 <script>
-import axios from '../axios'
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'GameNews',
-  data() {
-    return {
-      news: []
-    }
-  },
-  mounted() {
-    this.fetchNewsIndex()
-  },
-  methods: {
-    async fetchNewsIndex() {
-      try {
-        const data = await axios({
-          url: '/news',
-          method: 'get'
-        })
-        this.news = data.news.data
-      } catch (error) {
-        this.$toast.error(error.message)
-      }
-    }
+  computed: {
+    ...mapGetters({
+      news: 'news'
+    })
   }
 }
 </script>

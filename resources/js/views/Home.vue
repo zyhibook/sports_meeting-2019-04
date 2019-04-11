@@ -14,6 +14,7 @@
 </template>
 
 <script>
+import { mapActions } from 'vuex'
 import FlashMessageList from '../components/FlashMessageList'
 import Navigator from '../components/Navigator'
 import SideNavigator from '../components/SideNavigator'
@@ -22,7 +23,6 @@ import GoldTops from '../components/GoldTops'
 import GameArrangement from '../components/GameArrangement'
 import GameNews from '../components/GameNews'
 import GameRanking from '../components/GameRanking'
-import axios, { setFlashMessageDisplayer } from '../axios'
 
 export default {
   name: 'PageHome',
@@ -44,8 +44,12 @@ export default {
     }
   },
   mounted () {
-    setFlashMessageDisplayer(this.$refs.flashMessageList.handleReceiveFlashMessage)
-    axios('/games')
+    this.fetchData()
+  },
+  methods: {
+    ...mapActions({
+      fetchData: 'fetchData'
+    })
   }
 }
 </script>

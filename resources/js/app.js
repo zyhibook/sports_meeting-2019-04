@@ -21,7 +21,7 @@ require('./bootstrap');
 Vue.component('home-page', require('./views/Home.vue').default);
 
 // const App = require('./App.vue').default
-// const store = require('./store').default
+const store = require('./store').default
 // const router = require('./router').default
 
 /**
@@ -31,5 +31,6 @@ Vue.component('home-page', require('./views/Home.vue').default);
  */
 
 new Vue({
+  store,
   el: '#app'
 })

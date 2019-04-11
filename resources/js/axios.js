@@ -40,19 +40,19 @@ if (token) {
 _axios.interceptors.response.use(
   function (response) {
     // 整理数据
-    const title = response.data.title
-    const flashMessages = response.data.flash_messages
-    const data = response.data.data
+    // const title = response.data.title
+    // const flashMessages = response.data.flash_messages
+    const data = response.data
 
     // 修改标题
-    window.document.title = `${title} - 西安交通大学57届校运会`
+    // window.document.title = `${title} - 西安交通大学57届校运会`
 
     // 显示flashMessage
-    if (flashMessages && flashMessages instanceof Array) {
-      for (const message of flashMessages) {
-        customConfig.flashMessageDisplayer(message)
-      }
-    }
+    // if (flashMessages && flashMessages instanceof Array) {
+    //   for (const message of flashMessages) {
+    //     customConfig.flashMessageDisplayer(message)
+    //   }
+    // }
 
     // 返回数据
     return data

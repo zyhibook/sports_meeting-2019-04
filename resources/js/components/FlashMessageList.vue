@@ -1,5 +1,5 @@
 <template>
-  <ul class="flash-message-list">
+  <ul class="flash-message-list" v-if="flashMessages.length > 0">
     <flash-message
       v-for="(item, i) in flashMessages"
       :key="i"
@@ -9,6 +9,7 @@
       @delete="handleRemoveFlashMessage"
     ></flash-message>
   </ul>
+  <ul v-else></ul>
 </template>
 
 <script>
