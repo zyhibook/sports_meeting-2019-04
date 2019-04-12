@@ -19,13 +19,13 @@
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" name="class" value="1" id="class_1">
                         <label class="form-check-label" for="class_1">
-                            田赛
+                            径赛
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" name="class" value="2" id="class_2">
                         <label class="form-check-label" for="class_2">
-                            径赛
+                            田赛
                         </label>
                     </div>
                     <button class="btn btn-primary">提交</button>

@@ -96,4 +96,26 @@ class Game extends Model
     {
         return $this->belongsTo('App\Models\Team', 'bronze_s_id');
     }
+
+    public function toArray()
+    {
+        $data = [];
+
+        $data['name'] = $this->name;
+        $data['begins_at'] = $this->begins_at->toDateTimeString();
+        $data['golden_name'] = $this->golden_name;
+        $data['silver_name'] = $this->silver_name;
+        $data['bronze_name'] = $this->bronze_name;
+        $data['golden_s_name'] = $this->golden_s_name;
+        $data['silver_s_name'] = $this->silver_s_name;
+        $data['bronze_s_name'] = $this->bronze_s_name;
+        $data['golden_team'] = $this->golden ? $this->golden->name : null;
+        $data['silver_team'] = $this->silver ? $this->silver->name : null;
+        $data['bronze_team'] = $this->bronze ? $this->bronze->name : null;
+        $data['golden_s_team'] = $this->golden_s ? $this->golden_s->name : null;
+        $data['silver_s_team'] = $this->silver_s ? $this->silver_s->name : null;
+        $data['bronze_s_team'] = $this->bronze_s ? $this->bronze_s->name : null;
+
+        return $data;
+    }
 }

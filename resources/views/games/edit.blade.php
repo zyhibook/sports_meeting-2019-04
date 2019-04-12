@@ -20,13 +20,13 @@
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" name="class" value="1" id="class_1" @if($game->class == 1) checked @endif>
                         <label class="form-check-label" for="class_1">
-                            田赛
+                            径赛
                         </label>
                     </div>
                     <div class="form-check form-check-inline">
                         <input type="radio" class="form-check-input" name="class" value="2" id="class_2" @if($game->class == 2) checked @endif>
                         <label class="form-check-label" for="class_2">
-                            径赛
+                            田赛
                         </label>
                     </div>
                     <hr>
@@ -34,6 +34,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">金牌</span>
                             <select name="golden_id" id="golden_id" class="btn btn-outline-secondary">
+                                <option value="" @if(!$game->golden_id) selected @endif>空</option>
                                 @foreach($teams as $team)
                                     <option value="{{ $team->id }}" @if($game->golden_id == $team->id) selected @endif>{{ $team->name }}</option>
                                 @endforeach
@@ -48,6 +49,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">银牌</span>
                             <select name="silver_id" id="silver_id" class="btn btn-outline-secondary">
+                                <option value="" @if(!$game->silver_id) selected @endif>空</option>
                                 @foreach($teams as $team)
                                     <option value="{{ $team->id }}" @if($game->silver_id == $team->id) selected @endif>{{ $team->name }}</option>
                                 @endforeach
@@ -62,6 +64,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">铜牌</span>
                             <select name="bronze_id" id="bronze_id" class="btn btn-outline-secondary">
+                                    <option value="" @if(!$game->bronze_id) selected @endif>空</option>
                                 @foreach($teams as $team)
                                     <option value="{{ $team->id }}" @if($game->bronze_id == $team->id) selected @endif>{{ $team->name }}</option>
                                 @endforeach
@@ -76,6 +79,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">体特金牌</span>
                             <select name="golden_s_id" id="golden_s_id" class="btn btn-outline-secondary">
+                                <option value="" @if(!$game->golden_s_id) selected @endif>空</option>
                                 @foreach($teams as $team)
                                     <option value="{{ $team->id }}" @if($game->golden_s_id == $team->id) selected @endif>{{ $team->name }}</option>
                                 @endforeach
@@ -90,6 +94,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">体特银牌</span>
                             <select name="silver_s_id" id="silver_s_id" class="btn btn-outline-secondary">
+                                <option value="" @if(!$game->silver_s_id) selected @endif>空</option>
                                 @foreach($teams as $team)
                                     <option value="{{ $team->id }}" @if($game->silver_s_id == $team->id) selected @endif>{{ $team->name }}</option>
                                 @endforeach
@@ -104,6 +109,7 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">体特铜牌</span>
                             <select name="bronze_s_id" id="bronze_s_id" class="btn btn-outline-secondary">
+                                <option value="" @if(!$game->bronze_s_id) selected @endif>空</option>
                                 @foreach($teams as $team)
                                     <option value="{{ $team->id }}" @if($game->bronze_s_id == $team->id) selected @endif>{{ $team->name }}</option>
                                 @endforeach
