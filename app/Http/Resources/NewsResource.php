@@ -2,9 +2,7 @@
 
 namespace App\Http\Resources;
 
-use Illuminate\Http\Resources\Json\ResourceCollection;
-
-class NewsResource extends ResourceCollection
+class NewsResource extends BaseResource
 {
     /**
      * Transform the resource collection into an array.
@@ -15,7 +13,7 @@ class NewsResource extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'data' => $this->collection
+            'data' => static::convert($this->collection)
         ];
     }
 }

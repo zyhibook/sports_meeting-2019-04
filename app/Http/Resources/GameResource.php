@@ -3,10 +3,9 @@
 namespace App\Http\Resources;
 
 use App\Models\Game;
-use Illuminate\Http\Resources\Json\ResourceCollection;
 use Illuminate\Support\Collection;
 
-class GameResource extends ResourceCollection
+class GameResource extends BaseResource
 {
     /**
      * Transform the resource collection into an array.
@@ -18,8 +17,7 @@ class GameResource extends ResourceCollection
     {
         $new_collection = new Collection();
 
-        foreach ($this->collection as $item)
-        {
+        foreach ($this->collection as $item) {
             $new_item = new Game();
             $new_item->name = $item->name;
             $new_item->begins_at = $item->begins_at;
@@ -39,7 +37,7 @@ class GameResource extends ResourceCollection
             $new_collection->add($new_item);
         }
         return [
-            'data' => $new_collection,
+            'data' => static::convert($new_collection),
         ];
     }
 }
