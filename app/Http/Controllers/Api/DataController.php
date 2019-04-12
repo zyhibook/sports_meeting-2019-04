@@ -13,8 +13,10 @@ class DataController extends Controller
     public function news()
     {
         $news = News::select('id', 'title')->orderBy('updated_at', 'desc')->get();
-        
-        return new NewsResource($news);
+
+        return [
+            'data' => array_values($news->toArray())
+        ];
     }
 
     public function teams()

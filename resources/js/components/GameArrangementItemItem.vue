@@ -1,11 +1,20 @@
 <template>
   <li class="game-arrangement-item-item">
     <mu-divider></mu-divider>
-    <div class="game-arrangement-item-item-title-container" @click="$emit('update:visible', !visible)">
+    <div
+      class="game-arrangement-item-item-title-container"
+      @click="$emit('update:visible', !visible)"
+    >
       <mu-ripple :opacity="0.4">
         <div class="game-arrangement-item-item-title">
-          <ClockIcon class="game-arrangement-item-item-title-clock" :hour="getHour(item.begins_at)" :minute="getMinute(item.begins_at)" />
-          <span class="game-arrangement-item-item-title-text">{{ getTimeString(item.begins_at) }} - {{ item.name }}</span>
+          <ClockIcon
+            class="game-arrangement-item-item-title-clock"
+            :hour="getHour(item.begins_at)"
+            :minute="getMinute(item.begins_at)"
+          />
+          <span
+            class="game-arrangement-item-item-title-text"
+          >{{ getTimeString(item.begins_at) }} - {{ item.name }}</span>
         </div>
       </mu-ripple>
     </div>
@@ -13,39 +22,51 @@
       <div class="game-arrangement-item-item-table-container" v-if="visible">
         <table class="game-arrangement-item-item-table">
           <tr class="game-arrangement-item-item-row">
-            <td class="medal-cell"><img class="medal" src="../../img/golden.png"></td>
+            <td class="medal-cell">
+              <img class="medal" src="../../img/golden.png">
+            </td>
             <td>冠军</td>
-            <td>{{ item.golden_team }}</td>
+            <td>{{ item.golden_team || '(暂无)' }}</td>
             <td>{{ item.golden_name }}</td>
           </tr>
           <tr class="game-arrangement-item-item-row">
-            <td class="medal-cell"><img class="medal" src="../../img/silver.png"></td>
+            <td class="medal-cell">
+              <img class="medal" src="../../img/silver.png">
+            </td>
             <td>亚军</td>
-            <td>{{ item.silver_team }}</td>
+            <td>{{ item.silver_team || '(暂无)' }}</td>
             <td>{{ item.silver_name }}</td>
           </tr>
           <tr class="game-arrangement-item-item-row">
-            <td class="medal-cell"><img class="medal" src="../../img/bronze.png"></td>
+            <td class="medal-cell">
+              <img class="medal" src="../../img/bronze.png">
+            </td>
             <td>季军</td>
-            <td>{{ item.bronze_team }}</td>
+            <td>{{ item.bronze_team || '(暂无)' }}</td>
             <td>{{ item.bronze_name }}</td>
           </tr>
           <tr class="game-arrangement-item-item-row">
-            <td class="medal-cell"><img class="medal" src="../../img/golden.png"></td>
+            <td class="medal-cell">
+              <img class="medal" src="../../img/golden.png">
+            </td>
             <td>体特冠军</td>
-            <td>{{ item.golden_s_team }}</td>
+            <td>{{ item.golden_s_team || '(暂无)' }}</td>
             <td>{{ item.golden_s_name }}</td>
           </tr>
           <tr class="game-arrangement-item-item-row">
-            <td class="medal-cell"><img class="medal" src="../../img/silver.png"></td>
+            <td class="medal-cell">
+              <img class="medal" src="../../img/silver.png">
+            </td>
             <td>体特亚军</td>
-            <td>{{ item.silver_s_team }}</td>
+            <td>{{ item.silver_s_team || '(暂无)' }}</td>
             <td>{{ item.silver_s_name }}</td>
           </tr>
           <tr class="game-arrangement-item-item-row">
-            <td class="medal-cell"><img class="medal" src="../../img/bronze.png"></td>
+            <td class="medal-cell">
+              <img class="medal" src="../../img/bronze.png">
+            </td>
             <td>体特季军</td>
-            <td>{{ item.bronze_s_team }}</td>
+            <td>{{ item.bronze_s_team || '(暂无)' }}</td>
             <td>{{ item.bronze_s_name }}</td>
           </tr>
         </table>
@@ -58,12 +79,12 @@
 import ClockIcon from './ClockIcon'
 
 // 补上数字前导零
-function fixZero(num) {
+function fixZero (num) {
   return num < 10 ? `0${num}` : `${num}`
 }
 
 // 获取时间字符串
-function getTimeString(val) {
+function getTimeString (val) {
   const date = new Date(val)
   const h = fixZero(date.getHours())
   const m = fixZero(date.getMinutes())
@@ -87,11 +108,11 @@ export default {
   },
   methods: {
     getTimeString: getTimeString,
-    getHour(val) {
+    getHour (val) {
       const date = new Date(val)
       return date.getHours()
     },
-    getMinute(val) {
+    getMinute (val) {
       const date = new Date(val)
       return date.getMinutes()
     }
