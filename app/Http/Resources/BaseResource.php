@@ -3,16 +3,12 @@
 namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Support\Collection;
 
 class BaseResource extends ResourceCollection
 {
-    protected static function convert($collection)
+    protected static function convert(Collection $collection)
     {
-        $array = [];
-        foreach ($collection as $k => $v) {
-            $array[] = $v;
-        }
-
-        return $array;
+        return array_values($collection->toArray());
     }
 }
